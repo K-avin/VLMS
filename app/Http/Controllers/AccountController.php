@@ -14,7 +14,8 @@ class AccountController extends Controller
     public function homeIndex()
     {   
         $vehicles = Vehicle::all();
-        return view('pages.home', compact('vehicles'));
+        $count = Vehicle::all()->count();
+        return view('pages.home', compact('vehicles','count'));
     }
     public function index()
     {   

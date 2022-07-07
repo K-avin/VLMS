@@ -10,9 +10,9 @@ class SearchController extends Controller
        
         $search = $request->input('search');
   
-        $posts = Vehicle::query()
+        $reuslt = Vehicle::query()
                     ->where('vehicleNumber', 'LIKE', "%{$search}%")->get();
         
-        return view('search', compact('posts'));
+        return view('pages.search', compact('reuslt'));
     }
 }

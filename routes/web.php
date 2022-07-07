@@ -20,7 +20,7 @@ use App\Http\Controllers\AccountController;
 // });
 Route::get('/', [\App\Http\Controllers\AccountController::class, 'homeIndex'])->name('home');
 
-Route::get('/search/', [SearchController::class,'search'])->name('search');
+Route::get('/search', [\App\Http\Controllers\SearchController::class,'search'])->name('search');
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('addnew', function(){

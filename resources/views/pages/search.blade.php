@@ -12,33 +12,9 @@
                 <div class="flex flex-col">
                     <div class="overflow-x-auto shadow-md sm:rounded-lg">
                         <div class="inline-block min-w-full align-middle">
-                            <!-- component -->
-    <div class="container mx-auto ">
-        <div class="flex items-center justify-left">
-            <div class="bg-white p-6 rounded-2xl border-2 border-gray-50">
-                <div class="flex flex-col">
-                        <div class="flex flex-row space-x-4 items-center">
-                            <div id="icon">
-                                <span>
-                                    <svg class="w-8 h-8 fill-stroke text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div id="temp">
-                                <h5 class="font-bold text-3md">{{$count}}</h5>
-                                <p class="font-bold text-xs text-gray-500">Total Vehicles</p>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
                             <div class="overflow-hidden ">
-                                
                                 <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
-                                    <thead class="bg-white dark:bg-gray-800">
+                                    <thead class="bg-gray-100 dark:bg-gray-700">
                                         <tr>
                                             <th scope="col" class="p-4">
                                                 <div class="flex items-center">
@@ -48,20 +24,20 @@
                                                 </div>
                                             </th>
                                             <th scope="col"
-                                                class="text-xs font-bold font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
+                                                class="text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
                                                 Order No
                                             </th>
                                             <th scope="col"
-                                                class="font-bold text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
+                                                class="text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
                                                 Vehicle No
                                             </th>
                                             <th scope="col"
-                                                class="font-bold text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
+                                                class="text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
                                                 Stay
                                             </th>
                                             @auth
                                                 <th scope="col"
-                                                    class="font-bold text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
+                                                    class="text-xs font-medium tracking-wider text-left text-gray-700  dark:text-gray-400">
                                                     Action
                                                 </th>
                                             @endauth
@@ -70,7 +46,7 @@
                                     <tbody
                                         class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                                         
-                                        @foreach ($vehicles as $vehicle)
+                                        @foreach ($reuslt as $vehicle)
                                         
                                         <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <td class="p-4 w-4">

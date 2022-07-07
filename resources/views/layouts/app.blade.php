@@ -16,6 +16,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon/favicon.png') }}">
 </head>
 
 <body class="font-sans antialiased">
@@ -42,7 +43,7 @@
 
                 <!-- Logo -->
                 <div class="flex justify-center">
-                    <img src="https://raw.githubusercontent.com/infocliq/infocliq/main/favlogo.png?token=GHSAT0AAAAAABVXJQAT26X77NHK5M753DJMYWGACRA"
+                    <img src="https://raw.githubusercontent.com/K-avin/VLMS/50f275b05d87cb3e0d10aac8efef4b90ed4cd4f4/version%202%20red%20back%20logo.svg"
                         class="w-8 h-8" />
                 </div>
 
