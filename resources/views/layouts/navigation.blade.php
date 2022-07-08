@@ -16,6 +16,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         Home
                     </x-nav-link>
+                    <x-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                        List
+                    </x-nav-link>
                     @auth
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Add Vehicle
@@ -91,8 +94,8 @@
 <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                Home
+            <x-responsive-nav-link :href="route('list')" :active="request()->routeIs('list')">
+                List
             </x-responsive-nav-link>
             @auth
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -111,7 +114,9 @@
             @endauth
 
             <div class="mt-3 space-y-1">
-                <x-dropdown-link :href="route('about')">{{ __('My Profile') }}</x-dropdown-link>
+                @auth <x-dropdown-link :href="route('profile')">{{ __('My Profile') }}</x-dropdown-link> @endauth
+                <x-dropdown-link :href="route('login')">{{ __('Login') }}</x-dropdown-link>
+                @auth
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -122,6 +127,7 @@
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
+                @endauth
             </div>
         </div>
     </div>

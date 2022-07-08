@@ -18,14 +18,14 @@ use App\Http\Controllers\AccountController;
 //     // if you don’t put with() here, you will have N+1 query performance problem
 //     return view('pages.home');
 // });
-Route::get('/', [\App\Http\Controllers\AccountController::class, 'homeIndex'])->name('home');
+Route::get('/', [\App\Http\Controllers\AccountController::class, 'landingIindex'])->name('home');
+Route::get('/list', [\App\Http\Controllers\AccountController::class,'homeIndex'])->name('list');
 
 Route::get('/search', [\App\Http\Controllers\SearchController::class,'search'])->name('search');
 
 Route::group(['middleware' => 'auth'], function(){
-	Route::get('addnew', function(){
-		return view('dashboard');
-	})->name('dashboard');
+
+    Route::get('addnew', [App\Http\Controllers\VehicleController::class, 'addView'])->name('dashboard');
 
     Route::view('profile', 'profile')->name('profile');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
@@ -37,6 +37,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('edit-vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'updateView'])->name('edit-vehicle');
     Route::post('update-vehicle/{id}', [App\Http\Controllers\VehicleController::class, 'update'])->name('update-vehicle');
     
+
+    Route::get('changeStatus', [App\Http\Controllers\VehicleController::class, 'changeStatus'])->name('status');
+    Route::get('deleteAll', [App\Http\Controllers\VehicleController::class, 'deleteAll'])->name('deleteAll');
 });
 
 Route::view('about', 'pages.about')->name('about');

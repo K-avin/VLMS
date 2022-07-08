@@ -8,14 +8,20 @@ use App\Http\Requests\CreateAccountRequest;
 use App\Http\Requests\EditAccountRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Vehicle;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
+    public function landingIindex()
+    {   
+        return view('pages.home');
+    }
+
     public function homeIndex()
     {   
-        $vehicles = Vehicle::all();
+        $vehicles = DB::table('vehicles')->paginate(20);
         $count = Vehicle::all()->count();
-        return view('pages.home', compact('vehicles','count'));
+        return view('pages.vehiclesList', compact('vehicles','count'));
     }
     public function index()
     {   

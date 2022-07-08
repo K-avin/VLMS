@@ -11,7 +11,9 @@ class Vehicle extends Model
     public $table = "vehicles";
 
     protected $fillable = [
+        'vehiclePosition',
         'vehicleNumber',
         'staus',
+        'fuelStatus',
     ];
 }
